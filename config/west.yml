@@ -19,6 +19,10 @@ manifest:
       remote: urob
       revision: main
       clone-depth: 1
+    - name: zmk-auto-layer
+      remote: urob
+      revision: main
+      clone-depth: 1
     - name: zmk-rgbled-widget
       remote: hitsmaxft
       revision: main
