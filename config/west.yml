@@ -11,11 +11,15 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      revision: v0.3.0
       clone-depth: 1
       import:
         file: app/west.yml
     - name: zmk-helpers
+      remote: urob
+      revision: main
+      clone-depth: 1
+    - name: zmk-auto-layer
       remote: urob
       revision: main
       clone-depth: 1
