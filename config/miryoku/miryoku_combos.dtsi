@@ -1,0 +1,79 @@
+// Language switching combos for Cornix keyboard
+// Works with existing Karabiner-Elements configuration
+
+/*
+  Colemak-DH layout positions on Cornix:
+
+  Row 1:  q  w  f  p  b    j  l  u  y  '
+  Row 2:  a  r  s  t  g    m  n  e  i  o    (home row)
+  Row 3:  z  x  c  d  v    k  h  ,  .  /
+
+  Cornix matrix (active keys with outer pinky disabled):
+  Row 1:  1  2  3  4  5    6  7  8  9  10
+  Row 2: 13 14 15 16 17   18 19 20 21 22
+  Row 3: 25 26 27 28 29   32 33 34 35 36
+
+  Combo mappings:
+  - R+S (14+15) → English + BASE(Colemak-DH) layer
+  - E+I (20+21) → Korean + EXTRA(QWERTY) layer
+  - N+E (19+20) → Japanese Hiragana + EXTRA(QWERTY) layer
+*/
+
+/ {
+  macros {
+    // Macro: Switch to Korean + EXTRA(QWERTY) layer
+    lang_korean: lang_korean {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      wait-ms = <10>;
+      tap-ms = <10>;
+      bindings = <&kp LANG1>, <&kp LC(LA(SPACE))>, <&to U_EXTRA>;
+    };
+
+    // Macro: Switch to English + BASE(Colemak-DH) layer
+    lang_english: lang_english {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      wait-ms = <10>;
+      tap-ms = <10>;
+      bindings = <&kp LANG2>, <&to U_BASE>;
+    };
+
+    // Macro: Switch to Japanese + EXTRA(QWERTY) layer
+    lang_japanese: lang_japanese {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      wait-ms = <10>;
+      tap-ms = <10>;
+      bindings = <&kp LANG1>, <&to U_EXTRA>;
+    };
+  };
+
+  combos {
+    compatible = "zmk,combos";
+
+    // R+S → English + BASE(Colemak-DH)
+    combo_lang_english {
+      timeout-ms = <50>;
+      key-positions = <14 15>;
+      bindings = <&lang_english>;
+      layers = <0 1>;  // Works on both BASE and EXTRA layers
+    };
+
+    // E+I → Korean + EXTRA(QWERTY)
+    combo_lang_korean {
+      timeout-ms = <50>;
+      key-positions = <20 21>;
+      bindings = <&lang_korean>;
+      layers = <0 1>;
+    };
+
+    // N+E → Japanese Hiragana + EXTRA(QWERTY)
+    combo_lang_japanese {
+      timeout-ms = <50>;
+      key-positions = <19 20>;
+      bindings = <&lang_japanese>;
+      layers = <0 1>;
+    };
+  };
+};
