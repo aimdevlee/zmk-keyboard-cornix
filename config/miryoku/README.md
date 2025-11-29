@@ -1,0 +1,116 @@
+# Miryoku Layout for Cornix
+
+[Miryoku](https://github.com/manna-harbour/miryoku) layout configuration for the Cornix keyboard.
+
+[한국어 문서](./README_KR.md)
+
+## Current Configuration
+
+### Base Layout
+- **Alphabet**: Colemak-DH (BASE layer)
+- **Secondary Alphabet**: QWERTY (EXTRA layer)
+- **Navigation**: VI style (H J K L)
+- **Clipboard**: macOS (Cmd+C/V/X/Z)
+
+### Layer Structure
+| Layer | Number | Description |
+|-------|--------|-------------|
+| BASE | 0 | Colemak-DH + Home Row Mods |
+| EXTRA | 1 | QWERTY (for Korean/Japanese) |
+| TAP | 2 | Alphas without modifiers (gaming) |
+| BUTTON | 3 | Mouse buttons + Clipboard |
+| NAV | 4 | Navigation + Editing |
+| MOUSE | 5 | Mouse cursor + Scroll |
+| MEDIA | 6 | Media + Bluetooth |
+| NUM | 7 | Numpad |
+| SYM | 8 | Symbols |
+| FUN | 9 | Function keys (F1-F12) |
+
+## Language Switching Combos
+
+Integrated with Karabiner-Elements for automatic layer switching per language.
+
+| Combo | Input Source | Layer | Keyboard Layout |
+|-------|--------------|-------|-----------------|
+| R+S | English | BASE | Colemak-DH |
+| E+I | Korean | EXTRA | QWERTY |
+| N+E | Japanese (Hiragana) | EXTRA | QWERTY |
+
+### Colemak-DH Home Row Positions
+```
+Left:  A   R   S   T   (G)
+Right: (M)  N   E   I   O
+```
+
+## Home Row Mods Settings
+
+| Setting | Value | Description |
+|---------|-------|-------------|
+| `tapping-term-ms` | 200ms | Hold recognition time |
+| `require-prior-idle-ms` | 150ms | Prevents misfires during fast typing |
+| `flavor` | tap-preferred | Tap takes priority |
+| `quick-tap-ms` | 200ms | Allows rapid layer key presses |
+
+## Mouse Settings
+
+| Setting | Value | Description |
+|---------|-------|-------------|
+| Move speed | 2500 | 2x default |
+| Scroll speed | 200 | 2x default |
+| Move acceleration | 2 | Speeds up while held |
+
+## File Structure
+
+```
+config/miryoku/
+├── custom_config.h          # User settings (layout, navigation, etc.)
+├── mapping/
+│   └── cornix.h             # Cornix 50-key → Miryoku 36-key mapping
+├── miryoku.dtsi             # Main keymap definition
+├── miryoku.h                # Common macros and constants
+├── miryoku_behaviors.dtsi   # Home row mod behaviors
+├── miryoku_combos.dtsi      # Language switching combos
+├── miryoku_mousekeys.h      # Mouse speed settings
+├── miryoku_mousekeys.dtsi   # Mouse key behaviors
+└── miryoku_babel/           # Layer definitions (auto-generated)
+```
+
+## Customization
+
+### Change Layout
+Edit `custom_config.h`:
+```c
+// Switch to QWERTY
+#define MIRYOKU_ALPHAS_QWERTY
+
+// Disable VI navigation (use default)
+// #define MIRYOKU_NAV_VI
+```
+
+### Adjust Mouse Speed
+Edit `miryoku_mousekeys.h`:
+```c
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 2500  // Move speed
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 200   // Scroll speed
+#define U_MOUSE_MOVE_EXPONENT 2             // Acceleration
+```
+
+### Adjust Home Row Timing
+Edit `miryoku.h`:
+```c
+#define U_TAPPING_TERM 200  // in milliseconds
+```
+
+## Karabiner-Elements Setup (macOS)
+
+For language switching combos to work, Karabiner-Elements needs these rules:
+
+1. Left Command tap → `japanese_eisuu` (English)
+2. Right Command tap → `japanese_kana` (Hiragana)
+3. `Ctrl+Opt+Space` → Korean input source
+
+## References
+
+- [Miryoku Official Documentation](https://github.com/manna-harbour/miryoku)
+- [ZMK Documentation](https://zmk.dev/docs)
+- [Karabiner-Elements](https://karabiner-elements.pqrs.org/)
