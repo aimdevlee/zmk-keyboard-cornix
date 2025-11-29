@@ -13,6 +13,5 @@
 // #define MIRYOKU_KLUDGE_TOPROWCOMBOS
 // #define MIRYOKU_KLUDGE_BOTTOMROWCOMBOS
 
-// Optional: Clipboard type (default is CUA/standard)
-// #define MIRYOKU_CLIPBOARD_WIN
-// #define MIRYOKU_CLIPBOARD_MAC
+// macOS clipboard shortcuts (Cmd+C/V/X/Z instead of Ctrl)
+#define MIRYOKU_CLIPBOARD_MAC
