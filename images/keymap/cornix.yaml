@@ -1,0 +1,63 @@
+# Cornix Miryoku Keymap for Keymap Drawer
+# Auto-generated layout definition
+
+layout:
+  ortho_layout:
+    split: true
+    rows: 3
+    columns: 5
+    thumbs: 3
+
+layers:
+  BASE:
+    - [Q, W, F, P, B,   J, L, U, Y, "'"]
+    - [{t: A, h: GUI}, {t: R, h: ALT}, {t: S, h: CTRL}, {t: T, h: SHIFT}, G,   M, {t: N, h: SHIFT}, {t: E, h: CTRL}, {t: I, h: ALT}, {t: O, h: GUI}]
+    - [{t: Z, h: BUTTON}, {t: X, h: RALT}, C, D, V,   K, H, ",", {t: ".", h: RALT}, {t: /, h: BUTTON}]
+    - [{t: ESC, h: MEDIA}, {t: SPC, h: NAV}, {t: TAB, h: MOUSE},   {t: RET, h: SYM}, {t: BSPC, h: NUM}, {t: DEL, h: FUN}]
+
+  EXTRA:
+    - [Q, W, E, R, T,   Y, U, I, O, P]
+    - [{t: A, h: GUI}, {t: S, h: ALT}, {t: D, h: CTRL}, {t: F, h: SHIFT}, G,   H, {t: J, h: SHIFT}, {t: K, h: CTRL}, {t: L, h: ALT}, {t: "'", h: GUI}]
+    - [{t: Z, h: BUTTON}, {t: X, h: RALT}, C, V, B,   N, M, ",", {t: ".", h: RALT}, {t: /, h: BUTTON}]
+    - [{t: ESC, h: MEDIA}, {t: SPC, h: NAV}, {t: TAB, h: MOUSE},   {t: RET, h: SYM}, {t: BSPC, h: NUM}, {t: DEL, h: FUN}]
+
+  NAV:
+    - [BOOT, TAP, EXTRA, BASE, "",   REDO, PASTE, COPY, CUT, UNDO]
+    - [GUI, ALT, CTRL, SHIFT, "",   "←", "↓", "↑", "→", CAPS]
+    - ["", RALT, SYM, MOUSE, "",   HOME, PGDN, PGUP, END, INS]
+    - ["", "", "",   RET, BSPC, DEL]
+
+  MOUSE:
+    - [BOOT, TAP, EXTRA, BASE, "",   REDO, PASTE, COPY, CUT, UNDO]
+    - [GUI, ALT, CTRL, SHIFT, "",   "MS←", "MS↓", "MS↑", "MS→", ""]
+    - ["", RALT, SYM, MOUSE, "",   "WH←", "WH↓", "WH↑", "WH→", ""]
+    - ["", "", "",   RCLK, LCLK, MCLK]
+
+  MEDIA:
+    - [BOOT, TAP, EXTRA, BASE, "",   RGB, RGB+, RGB-, HUE+, HUE-]
+    - [GUI, ALT, CTRL, SHIFT, "",   PREV, VOL-, VOL+, NEXT, EP]
+    - ["", RALT, MEDIA, FUN, "",   BT0, BT1, BT2, BT3, BTCLR]
+    - ["", "", "",   STOP, PLAY, MUTE]
+
+  NUM:
+    - ["[", "7", "8", "9", "]",   "", BASE, EXTRA, TAP, BOOT]
+    - [";", "4", "5", "6", "=",   "", SHIFT, CTRL, ALT, GUI]
+    - ["`", "1", "2", "3", "\\",   "", NUM, SYM, RALT, ""]
+    - [".", "0", "-",   "", "", ""]
+
+  SYM:
+    - ["{", "&", "*", "(", "}",   "", BASE, EXTRA, TAP, BOOT]
+    - [":", "$", "%", "^", "+",   "", SHIFT, CTRL, ALT, GUI]
+    - ["~", "!", "@", "#", "|",   "", SYM, NUM, RALT, ""]
+    - ["(", ")", "_",   "", "", ""]
+
+  FUN:
+    - [F12, F7, F8, F9, PSCR,   "", BASE, EXTRA, TAP, BOOT]
+    - [F11, F4, F5, F6, SLCK,   "", SHIFT, CTRL, ALT, GUI]
+    - [F10, F1, F2, F3, PAUSE,   "", FUN, MEDIA, RALT, ""]
+    - [APP, SPC, TAB,   "", "", ""]
+
+combos:
+  - {p: [8, 9], k: "한글", l: [BASE, EXTRA]}
+  - {p: [7, 8], k: "日本語", l: [BASE, EXTRA]}
+  - {p: [2, 3], k: English, l: [BASE, EXTRA]}

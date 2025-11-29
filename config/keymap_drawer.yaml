@@ -1,0 +1,34 @@
+# Keymap Drawer configuration for Cornix keyboard
+# https://github.com/caksoylar/keymap-drawer
+
+draw_config:
+  # Key appearance
+  key_w: 60
+  key_h: 56
+  split_gap: 30
+  combo_w: 28
+  combo_h: 20
+
+  # Styling
+  inner_pad_w: 2
+  inner_pad_h: 2
+  outer_pad_w: 30
+  outer_pad_h: 30
+
+  # Show combo positions
+  draw_key_sides: false
+
+  # Colors
+  svg_extra_style: |
+    svg {
+      font-family: 'SF Pro', 'Helvetica Neue', sans-serif;
+    }
+    .held {
+      fill: #ffc;
+    }
+    .combo {
+      fill: #cff;
+    }
+    .trans {
+      fill: #eee;
+    }

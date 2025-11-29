@@ -4,6 +4,12 @@ Cornix 키보드에 적용된 [Miryoku](https://github.com/manna-harbour/miryoku
 
 [English Documentation](./README.md)
 
+## 키맵 시각화
+
+![Cornix Miryoku Keymap](../../images/keymap/cornix.svg)
+
+> 키맵 이미지는 [Keymap Drawer](https://github.com/caksoylar/keymap-drawer)를 통해 커밋할 때마다 자동 생성됩니다.
+
 ## 현재 설정
 
 ### 기본 레이아웃
