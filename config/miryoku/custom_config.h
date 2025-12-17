@@ -6,7 +6,7 @@
 // #define MIRYOKU_ALPHAS_QWERTY
 
 // VI-style navigation (HJKL)
-#define MIRYOKU_NAV_VI
+// #define MIRYOKU_NAV_VI
 
 // Optional: Uncomment to enable combos
 // #define MIRYOKU_KLUDGE_THUMBCOMBOS
