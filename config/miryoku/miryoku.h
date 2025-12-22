@@ -23,7 +23,10 @@
 #define U_NA &none // present but not available for use
 #define U_NU &none // available but not used
 
-#define U_TAPPING_TERM 200
+// Hold-tap timing settings (urob recommended)
+#define U_TAPPING_TERM 280       // Hold threshold (ms)
+#define U_QUICK_TAP 175          // Same-key repeat window (ms)
+#define U_PRIOR_IDLE 150         // Required idle before hold detection (ms)
 
 #include "miryoku_clipboard.h"
 
