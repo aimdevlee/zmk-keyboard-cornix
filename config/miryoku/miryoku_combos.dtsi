@@ -16,7 +16,7 @@
   Combo mappings:
   - R+S (14+15) → English + BASE(Colemak-DH) layer
   - E+I (20+21) → Korean + EXTRA(QWERTY) layer
-  - N+E (19+20) → Japanese Hiragana + EXTRA(QWERTY) layer
+  - N+E (19+20) → Japanese Hiragana + BASE(Colemak-DH) layer
 */
 
 / {
@@ -39,7 +39,7 @@
       bindings = <&kp LANG2>, <&to U_BASE>;
     };
 
-    // Macro: Switch to Japanese + EXTRA(QWERTY) layer
+    // Macro: Switch to Japanese + BASE(Colemak-DH) layer
     lang_japanese: lang_japanese {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
@@ -55,6 +55,7 @@
     // R+S → English + BASE(Colemak-DH)
     combo_lang_english {
       timeout-ms = <50>;
+      require-prior-idle-ms = <150>;
       key-positions = <14 15>;
       bindings = <&lang_english>;
       layers = <0 1>;  // Works on both BASE and EXTRA layers
@@ -63,14 +64,16 @@
     // E+I → Korean + EXTRA(QWERTY)
     combo_lang_korean {
       timeout-ms = <50>;
+      require-prior-idle-ms = <150>;
       key-positions = <20 21>;
       bindings = <&lang_korean>;
       layers = <0 1>;
     };
 
-    // N+E → Japanese Hiragana + EXTRA(QWERTY)
+    // N+E → Japanese Hiragana + BASE(Colemak-DH)
     combo_lang_japanese {
       timeout-ms = <50>;
+      require-prior-idle-ms = <150>;
       key-positions = <19 20>;
       bindings = <&lang_japanese>;
       layers = <0 1>;
