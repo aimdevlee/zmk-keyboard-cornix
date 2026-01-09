@@ -16,8 +16,12 @@
   - 30 alpha keys (3 rows × 5 columns × 2 sides)
   - 6 thumb keys (3 per side)
 
-  Cornix keys to disable (outer pinky columns + palm keys):
-  - Left outer pinky: 0, 12, 24
+  Left outer pinky column (language switching):
+  - Pos 0:  Japanese + BASE (Colemak-DH)
+  - Pos 12: English + BASE (Colemak-DH)
+  - Pos 24: Korean + EXTRA (QWERTY)
+
+  Cornix keys to disable (right outer pinky + palm keys):
   - Right outer pinky: 11, 23, 37
   - Palm keys: 38, 39, 40, 47, 48, 49
 
@@ -44,9 +48,9 @@
      K20, K21, K22, K23, K24,      K25, K26, K27, K28, K29, \
      N30, N31, K32, K33, K34,      K35, K36, K37, N38, N39 \
 ) \
-XXX  K00  K01  K02  K03  K04       K05  K06  K07  K08  K09  XXX  \
-XXX  K10  K11  K12  K13  K14       K15  K16  K17  K18  K19  XXX  \
-XXX  K20  K21  K22  K23  K24  XXX  XXX  K25  K26  K27  K28  K29  XXX  \
+&lang_japanese K00  K01  K02  K03  K04       K05  K06  K07  K08  K09  XXX  \
+&lang_english  K10  K11  K12  K13  K14       K15  K16  K17  K18  K19  XXX  \
+&lang_korean   K20  K21  K22  K23  K24  XXX  XXX  K25  K26  K27  K28  K29  XXX  \
 XXX  XXX  XXX  K32  K33  K34       K35  K36  K37  XXX  XXX  XXX
 
 // Combo positions for Cornix (if using kludge combos)
