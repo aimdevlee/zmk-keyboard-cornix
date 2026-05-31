@@ -120,3 +120,5 @@ For language switching combos to work, Karabiner-Elements needs these rules:
 - [Miryoku Official Documentation](https://github.com/manna-harbour/miryoku)
 - [ZMK Documentation](https://zmk.dev/docs)
 - [Karabiner-Elements](https://karabiner-elements.pqrs.org/)
+
+<!-- ci: verify nested path build trigger (config/**) -->
