@@ -122,3 +122,4 @@ For language switching combos to work, Karabiner-Elements needs these rules:
 - [Karabiner-Elements](https://karabiner-elements.pqrs.org/)
 
 <!-- ci: verify nested path build trigger (config/**) -->
+<!-- ci: re-verify build trigger after tags-ignore removal -->
