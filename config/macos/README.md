@@ -8,7 +8,7 @@ language regardless of the current source.
 
 | Key (left outer pinky) | Keyboard sends | Karabiner selects | Keyboard layer |
 |---|---|---|---|
-| top    (pos 0)  | Ctrl+Alt+3 | Japanese (Hiragana) | EXTRA (QWERTY) |
+| top    (pos 0)  | Ctrl+Alt+3 | Japanese (Hiragana) | BASE (Colemak-DH) |
 | middle (pos 12) | Ctrl+Alt+1 | English (ABC)       | BASE (Colemak-DH) |
 | bottom (pos 24) | Ctrl+Alt+2 | Korean (2-Set)      | EXTRA (QWERTY) |
 
