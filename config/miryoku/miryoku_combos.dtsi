@@ -1,47 +1,50 @@
 // Language switching for Cornix keyboard
 // Direct key mapping on left outer pinky column (pos 0, 12, 24)
-// Works with existing Karabiner-Elements configuration
-
-/*
-  Language switching keys:
-  - Pos 0  (top left outer pinky)    → English + BASE(Colemak-DH)
-  - Pos 12 (middle left outer pinky) → Japanese Hiragana + BASE(Colemak-DH)
-  - Pos 24 (bottom left outer pinky) → Korean + EXTRA(QWERTY)
-
-  These keys are mapped in config/miryoku/mapping/cornix.h
-  Combos are no longer used for language switching
-*/
+//
+// Each key sends a stateless trigger chord (Ctrl+Alt+1/2/3) that
+// Karabiner-Elements maps to an absolute input-source selection, then
+// switches the matching alpha layer on the keyboard. Because the chord
+// names the language unambiguously (not "cycle next"), switching always
+// lands on the right language regardless of the current source.
+//
+// Layer pairing:
+//   - English  -> BASE  (Colemak-DH)
+//   - Korean   -> EXTRA (QWERTY, for 2-set Hangul IME)
+//   - Japanese -> EXTRA (QWERTY, for romaji IME)
+//
+// Karabiner ruleset: config/macos/karabiner-language-switch.json
+// (import it and assign each input source via select_input_source).
+//
+// Key positions are mapped in config/miryoku/mapping/cornix.h
+// (pos 0 = Japanese, pos 12 = English, pos 24 = Korean).
 
 / {
   macros {
-    // Macro: Switch to Korean + EXTRA(QWERTY) layer
+    // Korean: trigger Ctrl+Alt+2, switch to EXTRA (QWERTY)
     lang_korean: lang_korean {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       wait-ms = <10>;
       tap-ms = <10>;
-      bindings = <&kp LANG1>, <&kp LC(LA(SPACE))>, <&to U_EXTRA>;
+      bindings = <&kp LC(LA(N2))>, <&to U_EXTRA>;
     };
 
-    // Macro: Switch to English + BASE(Colemak-DH) layer
+    // English: trigger Ctrl+Alt+1, switch to BASE (Colemak-DH)
     lang_english: lang_english {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       wait-ms = <10>;
       tap-ms = <10>;
-      bindings = <&kp LANG2>, <&to U_BASE>;
+      bindings = <&kp LC(LA(N1))>, <&to U_BASE>;
     };
 
-    // Macro: Switch to Japanese + BASE(Colemak-DH) layer
+    // Japanese: trigger Ctrl+Alt+3, switch to EXTRA (QWERTY)
     lang_japanese: lang_japanese {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       wait-ms = <10>;
       tap-ms = <10>;
-      bindings = <&kp LANG1>, <&to U_BASE>;
+      bindings = <&kp LC(LA(N3))>, <&to U_EXTRA>;
     };
   };
-
-  // Combos removed - language switching now uses dedicated keys (pos 0, 12, 24)
-  // See config/miryoku/mapping/cornix.h for key assignments
 };
