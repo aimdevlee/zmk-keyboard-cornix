@@ -15,3 +15,19 @@
 #include "miryoku/custom_config.h"
 #include "miryoku/mapping/cornix.h"
 #include "miryoku/miryoku.dtsi"
+
+// Cornix-specific: restore encoder sensor bindings on the Base layer.
+// miryoku.dtsi creates the keymap node and its layers (BASE, EXTRA, ...)
+// without devicetree labels, so we re-open the node by full path to merge
+// sensor-bindings into the existing BASE layer. This wires the (currently
+// status=disabled) EC11 encoders: volume on the left, page up/down on the
+// right — matching the behaviour the standalone keymap had before.
+/ {
+    keymap {
+        BASE {
+            sensor-bindings =
+                <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>,
+                <&inc_dec_kp PAGE_UP PAGE_DOWN>;
+        };
+    };
+};
