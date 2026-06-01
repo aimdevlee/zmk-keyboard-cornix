@@ -1,0 +1,64 @@
+{
+  "title": "Cornix language switch (Ctrl+Alt+1/2/3)",
+  "rules": [
+    {
+      "description": "Ctrl+Alt+1 -> English (ABC)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "1",
+            "modifiers": { "mandatory": ["control", "option"] }
+          },
+          "to": [
+            {
+              "select_input_source": {
+                "input_source_id": "^com\\.apple\\.keylayout\\.ABC$"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Ctrl+Alt+2 -> Korean (2-Set)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "2",
+            "modifiers": { "mandatory": ["control", "option"] }
+          },
+          "to": [
+            {
+              "select_input_source": {
+                "language": "^ko$",
+                "input_source_id": "^com\\.apple\\.inputmethod\\.Korean\\.2SetKorean$"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Ctrl+Alt+3 -> Japanese (Hiragana)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "3",
+            "modifiers": { "mandatory": ["control", "option"] }
+          },
+          "to": [
+            {
+              "select_input_source": {
+                "language": "^ja$",
+                "input_source_id": "com\\.apple\\.inputmethod\\.Japanese"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
