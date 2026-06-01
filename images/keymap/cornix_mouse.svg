@@ -147,19 +147,19 @@ svg {
 </g>
 <g transform="translate(84, 56)" class="key keypos-1">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap"><tspan style="font-size: 64%">&amp;bootloader</tspan></text>
+<text x="0" y="0" class="key tap">BOOT</text>
 </g>
 <g transform="translate(140, 42)" class="key keypos-2">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap"><tspan style="font-size: 64%">&amp;u_to_U_TAP</tspan></text>
+<text x="0" y="0" class="key tap">TAP</text>
 </g>
 <g transform="translate(196, 28)" class="key keypos-3">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap"><tspan style="font-size: 64%">&amp;u_to_U_EX…</tspan></text>
+<text x="0" y="0" class="key tap">EXTRA</text>
 </g>
 <g transform="translate(252, 42)" class="key keypos-4">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap"><tspan style="font-size: 64%">&amp;u_to_U_BA…</tspan></text>
+<text x="0" y="0" class="key tap">BASE</text>
 </g>
 <g transform="translate(308, 56)" class="key keypos-5">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -218,27 +218,19 @@ svg {
 </g>
 <g transform="translate(560, 101)" class="key keypos-19">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em" style="font-size: 78%">&amp;mmv</tspan><tspan x="0" dy="1.2em" style="font-size: 78%">MOVE_LEFT</tspan>
-</text>
+<text x="0" y="0" class="key tap">MS←</text>
 </g>
 <g transform="translate(616, 84)" class="key keypos-20">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em" style="font-size: 78%">&amp;mmv</tspan><tspan x="0" dy="1.2em" style="font-size: 78%">MOVE_DOWN</tspan>
-</text>
+<text x="0" y="0" class="key tap">MS↓</text>
 </g>
 <g transform="translate(672, 102)" class="key keypos-21">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">&amp;mmv</tspan><tspan x="0" dy="1.2em">MOVE_UP</tspan>
-</text>
+<text x="0" y="0" class="key tap">MS↑</text>
 </g>
 <g transform="translate(728, 112)" class="key keypos-22">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em" style="font-size: 70%">&amp;mmv</tspan><tspan x="0" dy="1.2em" style="font-size: 70%">MOVE_RIGHT</tspan>
-</text>
+<text x="0" y="0" class="key tap">MS→</text>
 </g>
 <g transform="translate(784, 112)" class="key keypos-23">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -257,11 +249,11 @@ svg {
 </g>
 <g transform="translate(196, 140)" class="key keypos-27">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap"><tspan style="font-size: 64%">&amp;u_to_U_SYM</tspan></text>
+<text x="0" y="0" class="key tap">SYM</text>
 </g>
 <g transform="translate(252, 154)" class="key keypos-28">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap"><tspan style="font-size: 64%">&amp;u_to_U_MO…</tspan></text>
+<text x="0" y="0" class="key tap">MOUSE</text>
 </g>
 <g transform="translate(308, 171)" class="key keypos-29">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -277,27 +269,19 @@ svg {
 </g>
 <g transform="translate(560, 157)" class="key keypos-33">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em" style="font-size: 78%">&amp;msc</tspan><tspan x="0" dy="1.2em" style="font-size: 78%">SCRL_LEFT</tspan>
-</text>
+<text x="0" y="0" class="key tap">WH←</text>
 </g>
 <g transform="translate(616, 140)" class="key keypos-34">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em" style="font-size: 78%">&amp;msc</tspan><tspan x="0" dy="1.2em" style="font-size: 78%">SCRL_DOWN</tspan>
-</text>
+<text x="0" y="0" class="key tap">WH↓</text>
 </g>
 <g transform="translate(672, 158)" class="key keypos-35">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">&amp;msc</tspan><tspan x="0" dy="1.2em">SCRL_UP</tspan>
-</text>
+<text x="0" y="0" class="key tap">WH↑</text>
 </g>
 <g transform="translate(728, 171)" class="key keypos-36">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em" style="font-size: 70%">&amp;msc</tspan><tspan x="0" dy="1.2em" style="font-size: 70%">SCRL_RIGHT</tspan>
-</text>
+<text x="0" y="0" class="key tap">WH→</text>
 </g>
 <g transform="translate(784, 171)" class="key keypos-37">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -322,21 +306,15 @@ svg {
 </g>
 <g transform="translate(467, 256) rotate(-23.0)" class="key keypos-44">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">&amp;mkp</tspan><tspan x="0" dy="1.2em">MB2</tspan>
-</text>
+<text x="0" y="0" class="key tap">RCLK</text>
 </g>
 <g transform="translate(526, 236) rotate(-11.93)" class="key keypos-45">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">&amp;mkp</tspan><tspan x="0" dy="1.2em">MB1</tspan>
-</text>
+<text x="0" y="0" class="key tap">LCLK</text>
 </g>
 <g transform="translate(588, 231)" class="key keypos-46">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">&amp;mkp</tspan><tspan x="0" dy="1.2em">MB3</tspan>
-</text>
+<text x="0" y="0" class="key tap">MCLK</text>
 </g>
 <g transform="translate(672, 217)" class="key keypos-47">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
