@@ -1,5 +1,27 @@
 # Keymap Drawer configuration for Cornix keyboard
 # https://github.com/caksoylar/keymap-drawer
+#
+# Used by .github/workflows/keymap-drawer.yml, which parses the live
+# config/cornix.keymap with `keymap parse -z` so the images always track
+# the real keymap (no hand-maintained YAML).
+
+parse_config:
+  # Run the C preprocessor so Miryoku's X-macros expand before parsing.
+  preprocess: true
+  # Include paths for the ZMK / zmk-helpers headers fetched by `west update`.
+  # Paths are relative to the repo root (the workflow's working directory).
+  additional_includes:
+    - zmk/app/include
+    - zmk/app/dts
+    - zmk-helpers/include
+    - config
+  # Friendly legends for the language-switch macros on the left outer
+  # pinky column (pos 0/12/24). These are raw &behaviors, so map them
+  # explicitly. See config/miryoku/miryoku_combos.dtsi.
+  raw_binding_map:
+    "&lang_english": {t: "EN", h: "lang"}
+    "&lang_korean": {t: "한", h: "lang"}
+    "&lang_japanese": {t: "日", h: "lang"}
 
 draw_config:
   # Key appearance
@@ -12,7 +34,8 @@ draw_config:
   # Styling
   inner_pad_w: 2
   inner_pad_h: 2
-  outer_pad_w: 30
+  # Extra horizontal room so the right outer pinky column isn't clipped.
+  outer_pad_w: 80
   outer_pad_h: 30
 
   # Show combo positions

@@ -7,3 +7,15 @@ result
 target
 
 firmware
+
+# west workspace (fetched by `west update`, not source)
+.west/
+zmk/
+zmk-helpers/
+zmk-dongle-display/
+zephyr/
+modules/
+optional/
+
+# local tooling
+.venv*/

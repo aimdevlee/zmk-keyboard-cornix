@@ -5,6 +5,9 @@ on:
   push:
     paths:
       - "config/**"
+      - "boards/jzf/cornix/cornix-layouts.dtsi"
+      - "scripts/layout_to_qmk_info.py"
+      - ".github/workflows/keymap-drawer.yml"
 
 jobs:
   draw:
@@ -15,20 +18,52 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install keymap-drawer
-        run: pip install keymap-drawer
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
 
-      - name: Draw Keymap
+      - name: Install tools
+        run: pip install keymap-drawer west
+
+      # The keymap is parsed live, so the ZMK + zmk-helpers headers must be
+      # present for the C preprocessor to expand Miryoku's macros.
+      - name: Fetch ZMK sources (headers only)
         run: |
-          # Draw SVG from the pre-defined YAML (Miryoku uses macros, so manual YAML is needed)
-          keymap -c config/keymap_drawer.yaml draw images/keymap/cornix.yaml > images/keymap/cornix.svg
+          west init -l config
+          west update --fetch-opt=--filter=blob:none
 
-          # Draw individual layer SVGs
-          for layer in BASE EXTRA NAV MOUSE MEDIA NUM SYM FUN; do
-            keymap -c config/keymap_drawer.yaml draw images/keymap/cornix.yaml -s $layer > images/keymap/cornix_${layer,,}.svg
+      - name: Draw keymap
+        run: |
+          # 1) Geometry: convert the board's zmk,physical-layout to QMK info.json
+          python3 scripts/layout_to_qmk_info.py \
+            boards/jzf/cornix/cornix-layouts.dtsi > cornix-info.json
+
+          # 2) Parse the LIVE keymap (config/keymap_drawer.yaml supplies the
+          #    include paths + raw_binding_map). This is the source of truth:
+          #    change the keymap, the images follow.
+          keymap -c config/keymap_drawer.yaml parse -z config/cornix.keymap \
+            > cornix-parsed.yaml
+
+          mkdir -p images/keymap
+
+          # 3) Full keymap (all layers)
+          keymap -c config/keymap_drawer.yaml draw cornix-parsed.yaml \
+            -j cornix-info.json > images/keymap/cornix.svg
+
+          # 4) Per-layer SVGs. Layer names come from each layer's display-name
+          #    (Title-case), not the C identifier. Tap/Button are helper layers
+          #    and are intentionally skipped.
+          for layer in Base Extra Nav Mouse Media Num Sym Fun; do
+            keymap -c config/keymap_drawer.yaml draw cornix-parsed.yaml \
+              -j cornix-info.json -s "$layer" \
+              > "images/keymap/cornix_$(echo "$layer" | tr '[:upper:]' '[:lower:]').svg"
           done
 
-      - name: Commit and Push
+          # Don't commit intermediate artifacts.
+          rm -f cornix-info.json cornix-parsed.yaml
+
+      - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
