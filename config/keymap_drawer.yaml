@@ -15,13 +15,46 @@ parse_config:
     - zmk/app/dts
     - zmk-helpers/include
     - config
-  # Friendly legends for the language-switch macros on the left outer
-  # pinky column (pos 0/12/24). These are raw &behaviors, so map them
-  # explicitly. See config/miryoku/miryoku_combos.dtsi.
+  # Friendly legends for raw &behaviors that the parser can't name on its
+  # own (the binding string must match exactly, args included).
   raw_binding_map:
+    # Language-switch macros on the left outer pinky column (pos 0/12/24).
+    # See config/miryoku/miryoku_combos.dtsi.
     "&lang_english": {t: "EN", h: "lang"}
     "&lang_korean": {t: "한", h: "lang"}
     "&lang_japanese": {t: "日", h: "lang"}
+    # Miryoku layer-to-layer jumps (&to U_LAYER).
+    "&u_to_U_BASE": "BASE"
+    "&u_to_U_EXTRA": "EXTRA"
+    "&u_to_U_TAP": "TAP"
+    "&u_to_U_NAV": "NAV"
+    "&u_to_U_MOUSE": "MOUSE"
+    "&u_to_U_MEDIA": "MEDIA"
+    "&u_to_U_NUM": "NUM"
+    "&u_to_U_SYM": "SYM"
+    "&u_to_U_FUN": "FUN"
+    # System / misc.
+    "&bootloader": "BOOT"
+    "&caps_word": "CAPS"
+    # Bluetooth profile select macros (MEDIA layer).
+    "&u_macro_u_bt_sel_0": "BT0"
+    "&u_macro_u_bt_sel_1": "BT1"
+    "&u_macro_u_bt_sel_2": "BT2"
+    "&u_macro_u_bt_sel_3": "BT3"
+    # Mouse buttons (MOUSE layer thumbs).
+    "&mkp MB1": "LCLK"
+    "&mkp MB2": "RCLK"
+    "&mkp MB3": "MCLK"
+    # Mouse cursor movement.
+    "&mmv MOVE_UP": "MS↑"
+    "&mmv MOVE_DOWN": "MS↓"
+    "&mmv MOVE_LEFT": "MS←"
+    "&mmv MOVE_RIGHT": "MS→"
+    # Mouse wheel scroll.
+    "&msc SCRL_UP": "WH↑"
+    "&msc SCRL_DOWN": "WH↓"
+    "&msc SCRL_LEFT": "WH←"
+    "&msc SCRL_RIGHT": "WH→"
 
 draw_config:
   # Key appearance
