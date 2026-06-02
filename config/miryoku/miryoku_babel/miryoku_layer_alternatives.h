@@ -86,8 +86,8 @@ U_NP,              U_NP,              U_LT(U_MEDIA, ESC),U_LT(U_NAV, SPACE),U_LT
 
 #define MIRYOKU_ALTERNATIVES_BASE_COLEMAKDH \
 &kp Q,             &kp W,             &kp F,             &kp P,             &kp B,             &kp J,             &kp L,             &kp U,             &kp Y,             &kp SQT,           \
-U_MT(LCTRL, A),    U_MT(LALT, R),     U_MT(LGUI, S),    U_MT_SHIFT(LSHFT, T),    &kp G,             &kp M,             U_MT_SHIFT(LSHFT, N),    U_MT(LGUI, E),      U_MT(LALT, I),     U_MT(LCTRL, O),     \
-U_LT(U_BUTTON, Z), U_MT(RALT, X),     &kp C,             &kp D,             &kp V,             &kp K,             &kp H,             &kp COMMA,         U_MT(RALT, DOT),   U_LT(U_BUTTON, SLASH),\
+U_HML(LCTRL, A),   U_HML(LALT, R),    U_HML(LGUI, S),   U_HML_SHIFT(LSHFT, T),   &kp G,             &kp M,             U_HMR_SHIFT(LSHFT, N),   U_HMR(LGUI, E),     U_HMR(LALT, I),    U_HMR(LCTRL, O),    \
+U_LT(U_BUTTON, Z), U_HML(RALT, X),    &kp C,             &kp D,             &kp V,             &kp K,             &kp H,             &kp COMMA,         U_HMR(RALT, DOT),  U_LT(U_BUTTON, SLASH),\
 U_NP,              U_NP,              U_LT(U_MEDIA, ESC),U_LT(U_NAV, SPACE),U_LT(U_MOUSE, TAB),U_LT(U_SYM, RET),  U_LT(U_NUM, BSPC), U_LT(U_FUN, DEL),  U_NP,              U_NP
 
 #define MIRYOKU_ALTERNATIVES_BASE_COLEMAKDHK \
@@ -114,10 +114,15 @@ U_MT(LCTRL, A),    U_MT(LALT, S),     U_MT(LGUI, H),    U_MT_SHIFT(LSHFT, T),   
 U_LT(U_BUTTON, Z), U_MT(RALT, X),     &kp M,             &kp C,             &kp V,             &kp K,             &kp L,             &kp COMMA,         U_MT(RALT, DOT),   U_LT(U_BUTTON, SLASH),\
 U_NP,              U_NP,              U_LT(U_MEDIA, ESC),U_LT(U_NAV, SPACE),U_LT(U_MOUSE, TAB),U_LT(U_SYM, RET),  U_LT(U_NUM, BSPC), U_LT(U_FUN, DEL),  U_NP,              U_NP
 
+// EXTRA(QWERTY) is used almost exclusively for fast (~160 wpm) Korean IME input.
+// Home-row mods are intentionally DISABLED here: at that speed HRM offers no
+// benefit (modifiers are rarely chorded mid-composition) and any stray hold
+// would corrupt an in-progress Hangul syllable. Thumb layer-taps are kept.
+// Positional HRM lives on BASE(Colemak-DH) only.
 #define MIRYOKU_ALTERNATIVES_BASE_QWERTY \
 &kp Q,             &kp W,             &kp E,             &kp R,             &kp T,             &kp Y,             &kp U,             &kp I,             &kp O,             &kp P,             \
-U_MT(LCTRL, A),    U_MT(LALT, S),     U_MT(LGUI, D),    U_MT_SHIFT(LSHFT, F),    &kp G,             &kp H,             U_MT_SHIFT(LSHFT, J),    U_MT(LGUI, K),      U_MT(LALT, L),     U_MT(LCTRL, SQT),   \
-U_LT(U_BUTTON, Z), U_MT(RALT, X),     &kp C,             &kp V,             &kp B,             &kp N,             &kp M,             &kp COMMA,         U_MT(RALT, DOT),   U_LT(U_BUTTON, SLASH),\
+&kp A,             &kp S,             &kp D,             &kp F,             &kp G,             &kp H,             &kp J,             &kp K,             &kp L,             &kp SQT,           \
+U_LT(U_BUTTON, Z), &kp X,             &kp C,             &kp V,             &kp B,             &kp N,             &kp M,             &kp COMMA,         &kp DOT,           U_LT(U_BUTTON, SLASH),\
 U_NP,              U_NP,              U_LT(U_MEDIA, ESC),U_LT(U_NAV, SPACE),U_LT(U_MOUSE, TAB),U_LT(U_SYM, RET),  U_LT(U_NUM, BSPC), U_LT(U_FUN, DEL),  U_NP,              U_NP
 
 #define MIRYOKU_ALTERNATIVES_BASE_QWERTZ \

@@ -1,8 +1,18 @@
 // Copyright 2022 Manna Harbour
 // https://github.com/manna-harbour/miryoku
 
+// Positional hold-tap trigger sets (Cornix physical positions, see mapping/cornix.h).
+// A home-row mod only resolves to its modifier (hold) when a key on the
+// OPPOSITE hand or either thumb is pressed -> blocks same-hand rolls.
+//   Left alphas:  1 2 3 4 5  13 14 15 16 17  25 26 27 28 29
+//   Right alphas: 6 7 8 9 10  18 19 20 21 22  32 33 34 35 36
+//   Thumbs:       41 42 43 (left)  44 45 46 (right)
+#define U_HRM_TRIGGER_RIGHT 6 7 8 9 10 18 19 20 21 22 32 33 34 35 36 41 42 43 44 45 46
+#define U_HRM_TRIGGER_LEFT  1 2 3 4 5 13 14 15 16 17 25 26 27 28 29 41 42 43 44 45 46
+
 / {
   behaviors {
+    // Legacy non-positional HRM (kept for any layout still referencing U_MT).
     // For Ctrl, Alt, GUI - faster tap response
     u_mt: u_mt {
       compatible = "zmk,behavior-hold-tap";
@@ -22,6 +32,54 @@
       quick-tap-ms = <U_QUICK_TAP>;
       require-prior-idle-ms = <U_PRIOR_IDLE>;
       flavor = "balanced";
+      hold-trigger-on-release;
+      bindings = <&kp>, <&kp>;
+    };
+    // Positional HRM for the LEFT hand: hold only when a RIGHT-hand/thumb key follows.
+    u_hml: u_hml {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <U_TAPPING_TERM>;
+      quick-tap-ms = <U_QUICK_TAP>;
+      require-prior-idle-ms = <U_PRIOR_IDLE>;
+      flavor = "tap-preferred";
+      hold-trigger-key-positions = <U_HRM_TRIGGER_RIGHT>;
+      hold-trigger-on-release;
+      bindings = <&kp>, <&kp>;
+    };
+    // Positional HRM for the RIGHT hand: hold only when a LEFT-hand/thumb key follows.
+    u_hmr: u_hmr {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <U_TAPPING_TERM>;
+      quick-tap-ms = <U_QUICK_TAP>;
+      require-prior-idle-ms = <U_PRIOR_IDLE>;
+      flavor = "tap-preferred";
+      hold-trigger-key-positions = <U_HRM_TRIGGER_LEFT>;
+      hold-trigger-on-release;
+      bindings = <&kp>, <&kp>;
+    };
+    // Positional Shift HRM (balanced flavor) - left hand.
+    u_hml_shift: u_hml_shift {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <U_TAPPING_TERM>;
+      quick-tap-ms = <U_QUICK_TAP>;
+      require-prior-idle-ms = <U_PRIOR_IDLE>;
+      flavor = "balanced";
+      hold-trigger-key-positions = <U_HRM_TRIGGER_RIGHT>;
+      hold-trigger-on-release;
+      bindings = <&kp>, <&kp>;
+    };
+    // Positional Shift HRM (balanced flavor) - right hand.
+    u_hmr_shift: u_hmr_shift {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <U_TAPPING_TERM>;
+      quick-tap-ms = <U_QUICK_TAP>;
+      require-prior-idle-ms = <U_PRIOR_IDLE>;
+      flavor = "balanced";
+      hold-trigger-key-positions = <U_HRM_TRIGGER_LEFT>;
       hold-trigger-on-release;
       bindings = <&kp>, <&kp>;
     };
