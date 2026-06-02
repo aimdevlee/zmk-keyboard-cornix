@@ -27,6 +27,11 @@ MIRYOKU_SHIFT_FUNCTION(u_out_tog, &out OUT_TOG, &out OUT_USB)
 
 MIRYOKU_SHIFT_FUNCTION(u_caps_word, &caps_word, &kp CAPS)
 
+// Volume keys double as display-brightness control: tap = volume,
+// Shift+tap = screen brightness (HID consumer C_BRI_UP/DN).
+MIRYOKU_SHIFT_FUNCTION(u_vol_up, &kp C_VOL_UP, &kp C_BRI_UP)
+MIRYOKU_SHIFT_FUNCTION(u_vol_dn, &kp C_VOL_DN, &kp C_BRI_DN)
+
 #if defined (MIRYOKU_KLUDGE_GLOBALSHIFTFUNCTIONS)
 
 MIRYOKU_SHIFT_FUNCTION(u_rgb_tog, &rgb_ug RGB_TOG, &rgb_ug RGB_OFF)

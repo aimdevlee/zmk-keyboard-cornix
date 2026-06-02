@@ -18,3 +18,8 @@
   #define U_RGB_BRI &rgb_ug RGB_BRI
   #define U_EP_TOG &ext_power EP_TOG
 #endif
+
+// Volume keys with Shift+tap = screen brightness. Always active
+// (defined outside the GLOBALSHIFTFUNCTIONS guard above).
+#define U_VOL_UP &u_vol_up
+#define U_VOL_DN &u_vol_dn
