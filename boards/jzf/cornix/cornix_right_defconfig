@@ -39,4 +39,8 @@ CONFIG_INPUT=y
 CONFIG_EC11=y
 CONFIG_EC11_TRIGGER_GLOBAL_THREAD=y
 
+# Deep sleep: power down after 30 min idle to extend battery life.
+CONFIG_ZMK_SLEEP=y
+CONFIG_ZMK_IDLE_SLEEP_TIMEOUT=1800000
+
 # vim: set ft=kconfig:
